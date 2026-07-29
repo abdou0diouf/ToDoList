@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}
+Accueil
+{% endblock %}
+
+
+{% block content %}
+
+<div class="text-center">
+
+    <h1 class="display-3">
+        Bienvenue sur ToDoList 🚀
+    </h1>
+
+    <p class="lead mt-3">
+        Gérez vos projets, organisez vos tâches et améliorez votre productivité.
+    </p>
+
+        {% if user.is_authenticated %}
+
+        <a href="{% url 'projects:dashboard' %}" 
+        class="btn btn-success btn-lg mt-3">
+
+            Voir mes projets 🚀
+
+        </a>
+
+        {% else %}
+
+        <a href="{% url 'accounts:register' %}" 
+        class="btn btn-primary btn-lg mt-3">
+
+            Commencer maintenant
+
+        </a>
+
+        {% endif %}
+
+        </div>
+
+        {% endblock %}

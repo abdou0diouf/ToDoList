@@ -16,3 +16,5 @@ staticfiles/
 htmlcov/
 
 .DS_Store
+
+*.log

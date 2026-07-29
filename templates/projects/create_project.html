@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+Nouveau projet
+{% endblock %}
+
+
+
+
+{% block content %}
+
+
+
+<div class="row justify-content-center">
+
+
+<div class="col-lg-6 col-md-8">
+
+
+
+<div class="card shadow-sm project-card">
+
+
+
+<div class="card-body">
+
+
+
+<h1 class="mb-4">
+
+
+<i class="bi bi-folder-plus"></i>
+
+Nouveau projet
+
+
+</h1>
+
+
+
+
+
+<form method="post">
+
+
+{% csrf_token %}
+
+
+
+{{ form.as_p }}
+
+
+
+
+
+
+<button type="submit"
+
+class="btn btn-success w-100">
+
+
+<i class="bi bi-check-circle-fill"></i>
+
+Créer le projet
+
+
+</button>
+
+
+
+
+</form>
+
+
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+{% endblock %}

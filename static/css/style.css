@@ -1,0 +1,456 @@
+/* ==========================
+   GENERAL
+========================== */
+
+
+*{
+
+    box-sizing:border-box;
+
+}
+
+
+
+body{
+
+    background:#f8f9fa;
+
+}
+
+
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+/* ==========================
+   LAYOUT
+========================== */
+
+
+.layout{
+
+    display:flex;
+
+    min-height:100vh;
+
+}
+
+
+
+.content{
+
+    flex:1;
+
+    padding:30px;
+
+}
+
+
+
+
+
+/* ==========================
+   SIDEBAR
+========================== */
+
+
+.sidebar{
+
+    width:250px;
+
+    min-height:100vh;
+
+    background:#212529;
+
+    padding:20px;
+
+    transition:.3s;
+
+}
+
+
+
+.sidebar-logo{
+
+    color:white;
+
+    font-size:1.5rem;
+
+    font-weight:700;
+
+    margin-bottom:40px;
+
+}
+
+
+
+.sidebar-menu{
+
+    list-style:none;
+
+    padding:0;
+
+}
+
+
+
+.sidebar-menu li{
+
+    margin-bottom:12px;
+
+}
+
+
+
+.sidebar-menu a{
+
+    display:flex;
+
+    align-items:center;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:12px 15px;
+
+    border-radius:12px;
+
+    transition:.3s;
+
+}
+
+
+
+.sidebar-menu a:hover{
+
+    background:#198754;
+
+    transform:translateX(5px);
+
+}
+
+
+
+.sidebar-menu i{
+
+    width:30px;
+
+    font-size:1.2rem;
+
+}
+
+
+
+.logout:hover{
+
+    background:#dc3545!important;
+
+}
+
+
+
+/* sidebar desktop réduite */
+
+
+.sidebar.collapsed{
+
+    width:80px;
+
+}
+
+
+
+.sidebar.collapsed .menu-text,
+
+.sidebar.collapsed .logo-text{
+
+    display:none;
+
+}
+
+
+
+.sidebar.collapsed .sidebar-menu a{
+
+    justify-content:center;
+
+}
+
+
+
+/* ==========================
+   MOBILE BUTTON
+========================== */
+
+
+.mobile-toggle{
+
+    display:none;
+
+}
+
+
+
+
+
+/* ==========================
+   DASHBOARD
+========================== */
+
+
+.stat-card{
+
+    border-radius:15px;
+
+    transition:.3s;
+
+}
+
+
+
+.stat-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+
+.projects-card{
+
+    border-top:5px solid #0d6efd;
+
+}
+
+
+
+.tasks-card{
+
+    border-top:5px solid #ffc107;
+
+}
+
+
+
+.done-card{
+
+    border-top:5px solid #198754;
+
+}
+
+
+
+.late-card{
+
+    border-top:5px solid #dc3545;
+
+}
+
+
+
+/* ==========================
+   PROJECT CARDS
+========================== */
+
+
+.project-card{
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    animation:fadeIn .6s;
+
+    transition:.3s;
+
+}
+
+
+
+.project-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 30px rgba(0,0,0,.15);
+
+}
+
+
+
+.project-card h5{
+
+    font-size:1.5rem;
+
+    font-weight:700;
+
+}
+
+
+/* Bouton sidebar */
+
+.sidebar-toggle{
+
+    position:fixed;
+
+    top:15px;
+
+    left:15px;
+
+    z-index:10001;
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#212529;
+
+    color:white;
+
+    font-size:1.4rem;
+
+    cursor:pointer;
+
+}
+
+
+/* ==========================
+   FORMS
+========================== */
+
+
+.form-control{
+
+    border-radius:10px;
+
+}
+
+
+
+.form-control:focus{
+
+    box-shadow:0 0 10px rgba(13,110,253,.3);
+
+}
+
+
+
+/* ==========================
+   PROGRESS
+========================== */
+
+
+.progress-bar{
+
+    transition:width .8s ease;
+
+}
+
+
+
+
+
+/* ==========================
+   OVERLAY MOBILE
+========================== */
+
+
+.overlay{
+
+    display:none;
+
+}
+
+
+
+
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:768px){
+
+
+.sidebar{
+
+    position:fixed;
+
+    top:0;
+
+    left:-260px;
+
+    width:250px;
+
+    height:100vh;
+
+    z-index:9999;
+
+}
+
+
+.sidebar.show{
+
+    left:0;
+
+}
+
+
+
+.content{
+
+    padding:20px;
+
+}
+
+
+
+.overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.5);
+
+    z-index:9998;
+
+    display:none;
+
+}
+
+
+.overlay.show{
+
+    display:block;
+
+}
+
+
+}

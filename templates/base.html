@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {% block title %}
+        ToDoList
+        {% endblock %}
+    </title>
+
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    {% load static %}
+
+
+    <!-- CSS personnalisé -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+</head>
+
+<body>
+
+
+<button id="toggle-btn" class="sidebar-toggle">
+
+    <i class="bi bi-list"></i>
+
+</button>
+
+
+
+<div class="layout">
+
+
+    <aside class="sidebar">
+
+
+        <div class="sidebar-logo">
+
+            <i class="bi bi-rocket-takeoff-fill"></i>
+
+            <span class="logo-text">
+                ToDoList
+            </span>
+
+        </div>
+
+
+        <ul class="sidebar-menu">
+
+
+            {% if user.is_authenticated %}
+
+
+            <li>
+                <a href="{% url 'projects:dashboard' %}">
+
+                    <i class="bi bi-speedometer2"></i>
+
+                    <span class="menu-text">
+                        Dashboard
+                    </span>
+
+                </a>
+            </li>
+
+
+
+            <li>
+                <a href="{% url 'projects:create_project' %}">
+
+                    <i class="bi bi-plus-circle"></i>
+
+                    <span class="menu-text">
+                        Nouveau projet
+                    </span>
+
+                </a>
+            </li>
+
+
+
+            <li>
+                <a href="{% url 'projects:profile' %}">
+
+                    <i class="bi bi-person-circle"></i>
+
+                    <span class="menu-text">
+                        {{ user.username }}
+                    </span>
+
+                </a>
+            </li>
+
+
+
+            <li>
+                <a class="logout"
+                   href="{% url 'accounts:logout' %}">
+
+                    <i class="bi bi-box-arrow-right"></i>
+
+                    <span class="menu-text">
+                        Déconnexion
+                    </span>
+
+                </a>
+            </li>
+
+
+            {% endif %}
+
+
+        </ul>
+
+
+    </aside>
+
+
+
+    <div id="overlay" class="overlay"></div>
+
+
+
+    <main class="content">
+
+
+        {% block content %}
+        {% endblock %}
+
+
+
+        <footer class="text-center py-4 text-muted">
+
+            © 2026 ToDoList • Développé par Ousmane Ndoye - SUDOUZI
+
+        </footer>
+
+
+    </main>
+
+
+</div>
+
+
+<script src="{% static 'js/main.js' %}"></script>
+
+
+</body>
+
+</html>
