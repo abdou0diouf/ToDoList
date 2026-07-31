@@ -64,65 +64,58 @@
 
             {% if user.is_authenticated %}
 
+                <li>
+                    <a href="{% url 'projects:dashboard' %}">
+                        <i class="bi bi-speedometer2"></i>
+                        <span class="menu-text">Dashboard</span>
+                    </a>
+                </li>
 
-            <li>
-                <a href="{% url 'projects:dashboard' %}">
+                <li>
+                    <a href="{% url 'projects:create_project' %}">
+                        <i class="bi bi-plus-circle"></i>
+                        <span class="menu-text">Nouveau projet</span>
+                    </a>
+                </li>
 
-                    <i class="bi bi-speedometer2"></i>
+                <li>
+                    <a href="{% url 'projects:profile' %}">
+                        <i class="bi bi-person-circle"></i>
+                        <span class="menu-text">{{ user.username }}</span>
+                    </a>
+                </li>
 
-                    <span class="menu-text">
-                        Dashboard
-                    </span>
+                <li>
+                    <a class="logout" href="{% url 'accounts:logout' %}">
+                        <i class="bi bi-box-arrow-right"></i>
+                        <span class="menu-text">Déconnexion</span>
+                    </a>
+                </li>
 
-                </a>
-            </li>
+                {% else %}
 
+                <li>
+                    <a href="{% url 'home' %}">
+                        <i class="bi bi-house-door"></i>
+                        <span class="menu-text">Accueil</span>
+                    </a>
+                </li>
 
+                <li>
+                    <a href="{% url 'accounts:login' %}">
+                        <i class="bi bi-box-arrow-in-right"></i>
+                        <span class="menu-text">Se connecter</span>
+                    </a>
+                </li>
 
-            <li>
-                <a href="{% url 'projects:create_project' %}">
+                <li>
+                    <a href="{% url 'accounts:register' %}">
+                        <i class="bi bi-person-plus"></i>
+                        <span class="menu-text">S'inscrire</span>
+                    </a>
+                </li>
 
-                    <i class="bi bi-plus-circle"></i>
-
-                    <span class="menu-text">
-                        Nouveau projet
-                    </span>
-
-                </a>
-            </li>
-
-
-
-            <li>
-                <a href="{% url 'projects:profile' %}">
-
-                    <i class="bi bi-person-circle"></i>
-
-                    <span class="menu-text">
-                        {{ user.username }}
-                    </span>
-
-                </a>
-            </li>
-
-
-
-            <li>
-                <a class="logout"
-                   href="{% url 'accounts:logout' %}">
-
-                    <i class="bi bi-box-arrow-right"></i>
-
-                    <span class="menu-text">
-                        Déconnexion
-                    </span>
-
-                </a>
-            </li>
-
-
-            {% endif %}
-
+                {% endif %}
 
         </ul>
 
