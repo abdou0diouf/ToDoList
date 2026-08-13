@@ -1,6 +1,12 @@
 # Mon Projet ToDoList
 
+sur github le abdou0dioufe ce fut pour garder l'anonymat
 
+auteur: Ousmane Ndoye
+
+## link of the website
+
+https://todolistouzi.up.railway.app
 
 # 🚀 ToDoList Django
 
@@ -27,6 +33,17 @@ Application web de gestion de projets et de tâches développée avec Django.
 - PostgreSQL (production)
 - Gunicorn
 - WhiteNoise
+
+## link powerpoint de presentation
+
+https://docs.google.com/presentation/d/1v0euNbV05rwJvxvc06uvDOM9SGIalK2lOTBP7VOTgpQ/edit?usp=drivesdk
+
+
+## link of the video showing
+https://github.com/user-attachments/assets/5583edae-d5a4-4e95-8b97-a8566add8d4d
+
+
+
 
 ## Installation locale
 
